@@ -24,7 +24,7 @@
   programs.git = {
     enable = true;
     userName = "Zie Sturges";
-    userEmail = "zie@sturges.com.au";
+    userEmail = "53106860+skoove@users.noreply.github.com";
     extraConfig.init.defaultBranch = "main";
   };
 
