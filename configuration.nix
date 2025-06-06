@@ -42,12 +42,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zie = {
     isNormalUser = true;
-    description = "Zie Sturges";
+    description = "Zie";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
 
-  users.defaultUserShell = pkgs.nushell;
+  users.defaultUserShell = pkgs.fish;
 
   environment.sessionVariables = {
     EDITOR = "hx";
@@ -65,19 +65,11 @@
   environment.systemPackages = with pkgs; [
     nh       # better rebuilds
     helix    # editor
-    nushell  # shell
-    starship # shell prompt
+    fish     # shell
     git
   ];
 
-  catppuccin.accent = "mauve";
-  catppuccin.flavor = "mocha";
-  catppuccin.enable = true;
-
-  programs.starship = {
-    enable = true;
-    presets = [ "bracketed-segments" ];
-  };
+  programs.fish.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
