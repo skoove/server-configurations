@@ -1,4 +1,4 @@
 { ... }:
 {
-  networking.hostName = "nixos-jellyfin";
+  networking.hostName = "jellyfin";
 }
