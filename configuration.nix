@@ -40,8 +40,11 @@
     isNormalUser = true;
     description = "Zie";
     extraGroups = [ "networkmanager" "wheel" ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKO45q8PNR1u3rfs+un5tWSV1vAzewZoT76iB1E+JLh zie@nixos-desktop" ];
     packages = with pkgs; [];
   };
+
+  security.sudo.wheelNeedsPassword = false;
 
   users.defaultUserShell = pkgs.fish;
 
