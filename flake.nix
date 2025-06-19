@@ -21,6 +21,14 @@
           ./server-configs/nixos-test-server/configuration.nix
         ];
       };
+
+      jellyfin = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration.nix
+          ./server-configs/jellyfin/configuration.nix
+        ];
+      };
     };
   };
 }
