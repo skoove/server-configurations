@@ -31,6 +31,21 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
+  # storage optimisation
+  nix.optimise = {
+    automatic = true;
+    persistent = true;
+    dates = [ "18:00" ];
+  };
+
+  # garbage collection
+  nix.gc = {
+    automatic = true;
+    persistent = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
