@@ -83,6 +83,7 @@
     helix    # editor
     fish     # shell
     git
+    zellij   # terminal multiplexer
   ];
 
   programs.fish.enable = true;
