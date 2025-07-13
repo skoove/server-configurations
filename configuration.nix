@@ -70,9 +70,6 @@
     COLORTERM = "truecolor";
   };
 
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "zie";
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
