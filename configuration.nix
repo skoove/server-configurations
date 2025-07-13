@@ -77,11 +77,15 @@
     
       zie = {
         isNormalUser = true;
-        description = "Zie";
         extraGroups = [ "networkmanager" "wheel" ];
         hashedPassword = "$6$OlvFrwWdhd1VlHoC$kinv7.fERmkcwrDTg6e9QFFlAiL8Twd3.ljmB3yNLqS1wpb93hNVWJY6jglJYFJG/z/teAAGlqtrWquJX3rM21";
-
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKO45q8PNR1u3rfs+un5tWSV1vAzewZoT76iB1E+JLh zie@nixos-desktop" ];
+      };
+
+      zane = {
+        isNormalUser = true;
+        extraGroups = [ "networkmanager" "wheel" ];
+        hashedPassword = "$6$e8NVKEVpKJ7Klt7O$.nxbu4hL98wJmcQNimeKQaTjBwCdZNQlkk4Bb4D2ezWxchWLCtpBtapo7cOK7pCPEOMerXEcqsoyPCdqCVV7L0";
       };
     };
 
