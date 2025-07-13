@@ -52,16 +52,23 @@
     variant = "";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.zie = {
-    isNormalUser = true;
-    description = "Zie";
-    extraGroups = [ "networkmanager" "wheel" ];
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKO45q8PNR1u3rfs+un5tWSV1vAzewZoT76iB1E+JLh zie@nixos-desktop" ];
-    packages = with pkgs; [];
+  users.users = {
+    root = {
+      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKO45q8PNR1u3rfs+un5tWSV1vAzewZoT76iB1E+JLh zie@nixos-desktop" ];
+      hashedPassword = "$6$aov1GUFdGTykn2Bu$T3PL3N3I6I5N9639YhsJqKk.gMkoAm2m7tqHhaAaxg8.T4/E6fG8f8pDy5931cNTTifoZz6lpTQuFuNoO98Ql1";
+    };
+    
+    zie = {
+      isNormalUser = true;
+      description = "Zie";
+      extraGroups = [ "networkmanager" "wheel" ];
+      hashedPassword = "$6$OlvFrwWdhd1VlHoC$kinv7.fERmkcwrDTg6e9QFFlAiL8Twd3.ljmB3yNLqS1wpb93hNVWJY6jglJYFJG/z/teAAGlqtrWquJX3rM21";
+
+      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKO45q8PNR1u3rfs+un5tWSV1vAzewZoT76iB1E+JLh zie@nixos-desktop" ];
+    };
   };
 
-  security.sudo.wheelNeedsPassword = false;
+  security.sudo.wheelNeedsPassword = true;
 
   users.defaultUserShell = pkgs.fish;
 
