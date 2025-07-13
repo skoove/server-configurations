@@ -91,7 +91,7 @@
       zane = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
-        hashedPassword = "$6$e8NVKEVpKJ7Klt7O$.nxbu4hL98wJmcQNimeKQaTjBwCdZNQlkk4Bb4D2ezWxchWLCtpBtapo7cOK7pCPEOMerXEcqsoyPCdqCVV7L0";
+        hashedPassword = "$6$XPIA64bx9L1af.Ek$MOB9ddomzRY53RgMnRykYRyql7tvDP295so2bc3gdi4mGvyDGZ/HqdM9w1a7K97ItOk3GrdhwCPlyb0F32o4L.";
       };
     };
   };
