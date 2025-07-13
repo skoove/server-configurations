@@ -94,15 +94,15 @@
         hashedPassword = "$6$e8NVKEVpKJ7Klt7O$.nxbu4hL98wJmcQNimeKQaTjBwCdZNQlkk4Bb4D2ezWxchWLCtpBtapo7cOK7pCPEOMerXEcqsoyPCdqCVV7L0";
       };
     };
+  };
 
-    security.sudo.wheelNeedsPassword = true;
+  security.sudo.wheelNeedsPassword = true;
 
-    users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.fish;
 
-    environment.sessionVariables = {
-      EDITOR = "hx";
-      COLORTERM = "truecolor";
-    };
+  environment.sessionVariables = {
+    EDITOR = "hx";
+    COLORTERM = "truecolor";
   };
 
   # Allow unfree packages
