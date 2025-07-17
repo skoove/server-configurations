@@ -1,5 +1,0 @@
-building the system configuration...
-error (ignored): error: SQLite database '/home/zie/.cache/nix/eval-cache-v5/6d8083a421ab4acc6035958d22d8931a1d17052d5e6d62befd2a22ec5fcc69bc.sqlite' is busy
-hostname contains invalid characters
-error: failed to start SSH connection to 'root@$ip'
-Command 'nix-copy-closure --to 'root@$ip' /nix/store/q9amajcc1dw5syhhdzkzcl7gfy1y28wq-nixos-system-transmission-25.11.20250714.62e0f05.drv' returned non-zero exit status 1.
