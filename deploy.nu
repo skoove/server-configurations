@@ -17,8 +17,15 @@ def main [
     print $"deploying to ($host.hostname) \(($host.ip)\)..."
 
     job spawn {
-      nixos-rebuild switch --flake .#($host.hostname) --target-host root@$host.ip --build-host root@$ip o+e> ./logs/($host.hostname)
-      print $"(ansi green)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\)"
+      let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) --build-host root@($host.ip) } | complete
+
+      if $result.exit_code == 0 {
+        print $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
+      } else {
+        print $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
+      }
+
+      $result | to nuon --indent 2 | save -f $'./logs/($host.hostname)'
     }
   }
 
