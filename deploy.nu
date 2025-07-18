@@ -27,7 +27,7 @@ def main [
         print $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
       }
 
-      $result | to nuon --indent 2 | save -f $'./logs/($host.hostname)'
+      $result | to nuon --indent 2 | save -f $'./logs/($host.hostname).nuon'
     }
   }
 
