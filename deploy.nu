@@ -1,4 +1,4 @@
-#! /usr/bin/env nu
+#! /usr/bin/env nu -n --no-std-lib
 
 def main [
   --tailscale (-t)
