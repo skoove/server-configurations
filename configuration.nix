@@ -1,7 +1,20 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L" # print build logs
+    ];
+    dates = "00:00";
+    randomizedDelaySec = "45min";
+    persistent = true;
+  };
   
   # Bootloader.
   boot.loader.grub.enable = true;
