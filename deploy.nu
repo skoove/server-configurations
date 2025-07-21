@@ -19,7 +19,7 @@ def main [
     ssh-keyscan -H $host.ip | save --append  ~/.ssh/known_hosts
 
     job spawn {
-      let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) --build-host root@($host.ip) } | complete
+      let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) } | complete
 
       if $result.exit_code == 0 {
         print $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
