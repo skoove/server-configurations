@@ -1,6 +1,6 @@
 { ... }:
 {
-  networking.hostName = "jellyfin";
+  networking.hostName = "ponos";
 
   fileSystems."/mnt/nas" = {
     device = "192.168.0.230:/volume1/Media";

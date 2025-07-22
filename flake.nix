@@ -13,21 +13,12 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      # this is just for testing
-      nixos-test-server = lib.nixosSystem {
+      # contains services for stuff like jellyfin
+      ponos = lib.nixosSystem {
         inherit system;
         modules = [
           ./configuration.nix
-          ./server-configs/nixos-test-server/configuration.nix
-        ];
-      };
-
-      # media server (mounts nas for storage)
-      jellyfin = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./configuration.nix
-          ./server-configs/jellyfin/configuration.nix
+          ./server-configs/ponos.nix
         ];
       };
 
@@ -36,7 +27,7 @@
         inherit system;
         modules = [
           ./configuration.nix
-          ./server-configs/transmission/configuration.nix
+          ./server-configs/transmission.nix
         ];
       };
     };
