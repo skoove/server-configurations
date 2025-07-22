@@ -8,9 +8,9 @@ def main [
   mut $hosts = null
   
   if $tailscale {
-    $hosts = (open ./hosts.yaml).tailscale
+    $hosts = (open ./hosts.nuon).tailscale
   } else {
-    $hosts = (open ./hosts.yaml).local
+    $hosts = (open ./hosts.nuon).local
   }
 
   for host in $hosts {
