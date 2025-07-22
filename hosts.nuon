@@ -1,0 +1,30 @@
+{
+  local: [
+    [
+      hostname,
+      ip
+    ];
+    [
+      jellyfin,
+      "192.168.0.253"
+    ],
+    [
+      transmission,
+      "192.168.0.36"
+    ]
+  ],
+  tailscale: [
+    [
+      hostname,
+      ip
+    ];
+    [
+      jellyfin,
+      "100.93.218.86"
+    ],
+    [
+      transmission,
+      "100.93.99.60"
+    ]
+  ]
+}
