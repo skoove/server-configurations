@@ -18,23 +18,24 @@
   services.caddy = {
     enable = true;
     virtualHosts = let
-      mkReverseProxy = {domain, ip}: {
+      mkReverseProxy = {domain, ip, tlsBackend ? false}: {
         ${domain} = {
           extraConfig = ''
-            tls internal
-            reverse_proxy ${ip} {
+            ${if tlsBackend then "tls internal" else ""}
+            reverse_proxy ${ip}${if tlsBackend then ''
               transport http {
                 tls
                 tls_insecure_skip_verify
               }
             }
+              '' else ""}
           '';
         };
       };
 
       proxies = [
-        { domain = "proxmox-1.home.com"; ip = "192.168.0.230:8006"; }
-        { domain = "proxmox-2.home.com"; ip = "192.168.0.231:8006"; }
+        { domain = "proxmox-1.home.com"; ip = "192.168.0.230:8006"; tlsBackend = true; }
+        { domain = "proxmox-2.home.com"; ip = "192.168.0.231:8006"; tlsBackend = true; }
         { domain = "jellyfin.home.com"; ip = "localhost:8096"; }
         { domain = "transmission.home.com"; ip = "192.168.0.211:9091"; }
       ];
