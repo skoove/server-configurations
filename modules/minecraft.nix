@@ -20,7 +20,7 @@
       package = pkgs.fabricServers.fabric-1_21_8;
       serverProperties = {
         motd = "nixos server lets goooo";
-        online-mode = true;
+        online-mode = false;
       };
       symlinks = {
         "ops.json" = pkgs.writeTextFile {
