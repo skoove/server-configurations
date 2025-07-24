@@ -24,6 +24,7 @@
           ./configuration.nix
           ./server-configs/ponos.nix
         ];
+        specialArgs = { inherit inputs; };
       };
 
       # torrent client
@@ -33,6 +34,7 @@
           ./configuration.nix
           ./server-configs/transmission.nix
         ];
+        specialArgs = { inherit inputs; };
       };
     };
   };
