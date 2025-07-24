@@ -28,8 +28,13 @@
           text = ''
             [
               {
-                "uuid": "442b7f11-e4f8-46f1-ace0-79b5e810659d",
+                "uuid": "b863a2f8-d6b9-3df6-b3b8-b0a1a590c724",
                 "name": "Zidget_",
+                "level": 4
+              }
+              {
+                "uuid": "0cb478a0-8104-3b2d-9975-78897064757f",
+                "name": "skoove",
                 "level": 4
               }
             ]
