@@ -77,7 +77,7 @@
       zane = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
-        openssh.authorizedKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKr8Mgmz+maboqYASe3ghR2zAtKqxsPVsMfBcBjpD5GA zane@DESKTOP-JA5OSPR"];
+        openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKr8Mgmz+maboqYASe3ghR2zAtKqxsPVsMfBcBjpD5GA zane@DESKTOP-JA5OSPR"];
         hashedPassword = "$6$XPIA64bx9L1af.Ek$MOB9ddomzRY53RgMnRykYRyql7tvDP295so2bc3gdi4mGvyDGZ/HqdM9w1a7K97ItOk3GrdhwCPlyb0F32o4L.";
       };
     };
