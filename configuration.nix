@@ -59,6 +59,7 @@
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINQVpPsMT/TM3XRDvhg662rUJ19PbB90FejdkYvtF8wj zie@nixos-desktop"
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPnGnBgccjncw0VMcpn/qjauAugKrTSzkIjLKssgVG9z zie@nixos-laptop"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKr8Mgmz+maboqYASe3ghR2zAtKqxsPVsMfBcBjpD5GA zane@DESKTOP-JA5OSPR"
         ];
         hashedPassword = "$6$aov1GUFdGTykn2Bu$T3PL3N3I6I5N9639YhsJqKk.gMkoAm2m7tqHhaAaxg8.T4/E6fG8f8pDy5931cNTTifoZz6lpTQuFuNoO98Ql1";
       };
@@ -76,6 +77,7 @@
       zane = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" "wheel" ];
+        openssh.authorizedKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKr8Mgmz+maboqYASe3ghR2zAtKqxsPVsMfBcBjpD5GA zane@DESKTOP-JA5OSPR"];
         hashedPassword = "$6$XPIA64bx9L1af.Ek$MOB9ddomzRY53RgMnRykYRyql7tvDP295so2bc3gdi4mGvyDGZ/HqdM9w1a7K97ItOk3GrdhwCPlyb0F32o4L.";
       };
     };
