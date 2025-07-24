@@ -21,6 +21,7 @@
       serverProperties = {
         motd = "nixos server lets goooo";
         online-mode = false;
+        spawn-protection = 0;
       };
       symlinks = {
         "ops.json" = pkgs.writeTextFile {
