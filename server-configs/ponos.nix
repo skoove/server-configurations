@@ -1,5 +1,9 @@
-{ ... }:
+{ inputs , pkgs , ... }:
 {
+  imports = [
+    ../modules/minecraft.nix
+  ];
+
   networking.hostName = "ponos";
 
   fileSystems."/mnt/nas" = {
