@@ -24,7 +24,7 @@
     (pkgs.writeShellScriptBin "nas-mount" ''
       set -e
       MOUNT_POINT="/mnt/nas"
-      REMOTE="192.168.0.230:/volume1/Media"
+      REMOTE="192.168.0.232:/volume1/Media"
 
       sudo mkdir -p "$MOUNT_POINT"
       echo "Mounting NAS..."

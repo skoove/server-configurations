@@ -7,7 +7,7 @@
   networking.hostName = "ponos";
 
   fileSystems."/mnt/nas" = {
-    device = "192.168.0.230:/volume1/Media";
+    device = "192.168.0.232:/volume1/Media";
     fsType = "nfs";
     options = [ "nofail" "x-systemd.automount" "x-systemd.device-timeout=10s" ];
   };
