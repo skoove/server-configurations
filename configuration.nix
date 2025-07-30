@@ -45,6 +45,20 @@
     options = "--delete-older-than 7d";
   };
 
+  systemd.timers.reboot-weekly = {
+    enable = true;
+    wantedBy = [ "timers.target" ];
+    timerConfig.OnCalendar = "Mon 00:00";
+  };
+
+  systemd.services.reboot-weekly = {
+    description = "weekly reboot";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/run/current-system/sw/bin/systemctl reboot";
+    };
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
