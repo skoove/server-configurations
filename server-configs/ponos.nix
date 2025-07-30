@@ -26,7 +26,7 @@
   # caddy firewall ports
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.caddy = {
-    enable = true;
+    enable = false;
     virtualHosts = let
       mkReverseProxy = {domain, ip, tlsBackend ? false}: {
         ${domain} = {
