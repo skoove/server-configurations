@@ -125,7 +125,11 @@
   services.openssh.enable = true;
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
+
   services.tailscale.enable = true;
+  services.tailscale.package = pkgs.tailscale.overrideAttrs (old: {
+    version = "1.86.2";
+  });
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
