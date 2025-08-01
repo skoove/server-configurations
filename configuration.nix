@@ -129,15 +129,16 @@
   services.tailscale.enable = true;
   services.tailscale.package = pkgs.tailscale.overrideAttrs (old: {
     version = "1.86.2";
+    doCheck = false;
 
     src = pkgs.fetchFromGitHub {
       owner = "tailscale";
       repo = "tailscale";
       rev = "v1.86.2";
-      hash = lib.fakeSha256;
+      hash = "sha256-hozfvKkvTeaabN1tYl0NlEpjfD4sZQe9Z+agdoXFHNE=";
     };
 
-    vendorHash = lib.fakeSha256;
+    vendorHash = "sha256-4QTSspHLYJfzlontQ7msXyOB5gzq7ZwSvWmKuYY5klA=";
   });
 
   # Open ports in the firewall.
