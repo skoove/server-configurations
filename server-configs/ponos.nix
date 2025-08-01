@@ -5,6 +5,10 @@
   ];
 
   networking.hostName = "ponos";
+  networking.firewall.allowedTCPPorts = [
+    80 443 # caddy
+    7000 # miniflux
+  ];
 
   fileSystems."/mnt/nas" = {
     device = "192.168.0.232:/volume1/Media";
@@ -33,7 +37,6 @@
   };
 
   # caddy firewall ports
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
   services.caddy = {
     enable = false;
     virtualHosts = let
