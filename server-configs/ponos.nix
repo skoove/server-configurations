@@ -16,11 +16,20 @@
     enable = true;
     openFirewall = true;
   };
-
+  
   services.audiobookshelf = {
     enable = true;
     openFirewall = true;
     host = "0.0.0.0";
+  };
+
+  services.miniflux = {
+    enable = true;
+    config = {
+      FETCH_NEBULA_WATCH_TIME = true;
+      FETCH_ODYSEE_WATCH_TIME = true;
+      LISTEN_ADDRR = "0.0.0.0:7000";
+    };
   };
 
   # caddy firewall ports
