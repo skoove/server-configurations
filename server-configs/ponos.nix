@@ -30,8 +30,9 @@
   services.miniflux = {
     enable = true;
     config = {
-      FETCH_NEBULA_WATCH_TIME = true;
-      FETCH_ODYSEE_WATCH_TIME = true;
+      CREATE_ADMIN = 0;
+      FETCH_NEBULA_WATCH_TIME = 1;
+      FETCH_ODYSEE_WATCH_TIME = 1;
       LISTEN_ADDRR = "0.0.0.0:7000";
     };
   };
