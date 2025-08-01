@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -129,6 +129,15 @@
   services.tailscale.enable = true;
   services.tailscale.package = pkgs.tailscale.overrideAttrs (old: {
     version = "1.86.2";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "tailscale";
+      repo = "tailscale";
+      rev = "v1.86.2";
+      hash = lib.fakeSha256;
+    };
+
+    vendorHash = lib.fakeSha256;
   });
 
   # Open ports in the firewall.
