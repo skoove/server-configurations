@@ -23,6 +23,23 @@
         online-mode = false;
         spawn-protection = 0;
       };
+
+      servers."supersuperflatish" = {
+      enable = true;
+      autoStart = false;
+      enableReload = true;
+      jvmOpts = "-Xmx4G -Xms4G";
+      package = pkgs.fabricServers.fabric-1_21_8;
+      serverProperties = {
+        motd = "how did u see this";
+        online-mode = false;
+        spawn-protection = 0;
+        difficulty=hard
+        generate-structures=false
+        level-type=minecraft\:flat
+        server-port=25566
+      };
+
       symlinks = {
         "ops.json" = pkgs.writeTextFile {
           name = "operators-list";
