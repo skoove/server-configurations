@@ -34,10 +34,10 @@
         motd = "how did u see this";
         online-mode = false;
         spawn-protection = 0;
-        difficulty=hard
-        generate-structures=false
-        level-type=minecraft\:flat
-        server-port=25566
+        difficulty = "hard";
+        generate-structures = false;
+        level-type = "minecraft\:flat";
+        server-port = 25566;
       };
 
       symlinks = {
