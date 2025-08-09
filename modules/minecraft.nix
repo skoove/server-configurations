@@ -16,7 +16,7 @@
       enable = true;
       autoStart = true;
       enableReload = true;
-      jvmOpts = "-Xmx4G -Xms4G";
+      jvmOpts = "-Xmx3G -Xms3G";
       package = pkgs.fabricServers.fabric-1_21_8;
       serverProperties = {
         motd = "nixos server lets goooo";
@@ -49,7 +49,7 @@
       enable = true;
       autoStart = false;
       enableReload = true;
-      jvmOpts = "-Xmx4G -Xms4G";
+      jvmOpts = "-Xmx2G -Xms2G";
       package = pkgs.fabricServers.fabric-1_21_8;
       serverProperties = {
         motd = "how did u see this";
