@@ -47,7 +47,7 @@
     
     servers."supersuperflatish" = {
       enable = true;
-      autoStart = false;
+      autoStart = true;
       enableReload = true;
       jvmOpts = "-Xmx2G -Xms2G";
       package = pkgs.fabricServers.fabric-1_21_8;
