@@ -35,9 +35,9 @@ def main [
 
   while (job list | is-empty) == false {
     # do nothing so the program does not exit killing all the job
+    # sleep because sometimes the success message wont get printed
+    sleep 1sec
   }
 
-  # sleep because sometimes the success message wont get printed
-  sleep 1sec
 }
 
