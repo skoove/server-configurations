@@ -17,27 +17,18 @@ def main [
   
     print $"deploying to ($host.hostname) \(($host.ip)\)..."
 
-    job spawn {
-      ssh-keygen -R $host.ip
-      ssh-keyscan $host.ip | save --append ~/.ssh/known_hosts
+    ssh-keygen -R $host.ip
+    ssh-keyscan $host.ip | save --append ~/.ssh/known_hosts
 
-      let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) } | complete
+    let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) } | complete
 
-      if $result.exit_code == 0 {
-        print $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
-      } else {
-        print $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
-      }
-
-      $result | to nuon --indent 2 | save -f $'./logs/($host.hostname).nuon'
+    if $result.exit_code == 0 {
+      print $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
+    } else {
+      print $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
     }
-  }
 
-  while (job list | is-empty) == false {
-    # do nothing so the program does not exit killing all the job
-    # sleep because sometimes the success message wont get printed
-    sleep 1sec
+    $result | to nuon --indent 2 | save -f $'./logs/($host.hostname).nuon'
   }
-
 }
 
