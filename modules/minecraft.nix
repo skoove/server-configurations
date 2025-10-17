@@ -46,7 +46,7 @@
     };
 
     servers."sturver" = {
-      package = pkgs.minecraftServers.vanilla-1_21_9;
+      package = pkgs.minecraftServers.vanilla;
       enable = true;
       autoStart = true;
       enableReload = true;
