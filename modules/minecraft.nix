@@ -22,7 +22,7 @@
 
       serverProperties = {
         motd = "struver | NixOS";
-        online-mode = true;
+        online-mode = false;
         spawn-protection = 0;
         server-port = 25565 + 1; # one higher than default port
       };
