@@ -36,6 +36,11 @@
                 "uuid": "0cb478a0-8104-3b2d-9975-78897064757f",
                 "name": "skoove",
                 "level": 4
+              },
+              {
+                "uuid": "bc0fd5ea-3e20-3fcc-a983-4097576b5a85"
+                "name": "AliAndZ",
+                "level": 4
               }
             ]
           '';
