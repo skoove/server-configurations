@@ -119,6 +119,8 @@
     zellij   # terminal multiplexer
   ];
 
+  environment.shellAliases = { sys = "${lib.getExe pkgs.systemd-manager-tui}"; };
+
   programs.fish.enable = true;
 
   # Enable the OpenSSH daemon.
