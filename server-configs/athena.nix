@@ -1,6 +1,6 @@
 { ... }:
 {
-  networking.hostname = "athena";
+  networking.hostName = "athena";
 
   services.ntfy-sh = {
     enable = true;
