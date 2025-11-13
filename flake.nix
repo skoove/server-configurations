@@ -36,6 +36,17 @@
         ];
         specialArgs = { inherit inputs; };
       };
+      
+      # deployment and monitoring server
+      athena = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration.nix
+          ./server-configs/athena.nix
+
+        ];
+        specialArgs = { inherit inputs; };
+      };
     };
   };
 }
