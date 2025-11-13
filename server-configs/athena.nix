@@ -11,8 +11,8 @@ in
     enable = true;
 
     settings = {
-      listen-http = ":${ntfy-port}";
-      base-url = "http://100.116.46.98";
+      listen-http = ":${builtins.toString ntfy-port}";
+      base-url = "http://100.116.46.98:${builtins.toString ntfy-port}";
     };
   };
 }

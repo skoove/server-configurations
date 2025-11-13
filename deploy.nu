@@ -17,8 +17,8 @@ def main [
   
     print $"deploying to ($host.hostname) \(($host.ip)\)..."
 
-    ssh-keygen -R $host.ip
-    ssh-keyscan $host.ip | save --append ~/.ssh/known_hosts
+    # ssh-keygen -R $host.ip
+    # ssh-keyscan $host.ip | save --append ~/.ssh/known_hosts
 
     let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) } | complete
 
