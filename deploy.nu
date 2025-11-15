@@ -16,6 +16,7 @@ def main [
   for host in $hosts {
   
     print $"deploying to ($host.hostname) \(($host.ip)\)..."
+    notify-send $"deploying to ($host.hostname) \(($host.ip)\)..."
 
     # ssh-keygen -R $host.ip
     # ssh-keyscan $host.ip | save --append ~/.ssh/known_hosts
@@ -24,11 +25,15 @@ def main [
 
     if $result.exit_code == 0 {
       print $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
+      notify-send $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
     } else {
       print $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
+      notify-send $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
     }
 
     $result | to nuon --indent 2 | save -f $'./logs/($host.hostname).nuon'
   }
+
+  notify-send "deployments done!"
 }
 
