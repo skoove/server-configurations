@@ -24,11 +24,11 @@ def main [
     let $result = do { nixos-rebuild switch --flake .#($host.hostname) --target-host root@($host.ip) } | complete
 
     if $result.exit_code == 0 {
-      print $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
-      notify-send $"(ansi green_bold)[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
+      print $"[✓](ansi reset) deployment to ($host.hostname) \(($host.ip)\) success "
+      notify-send $"[✓] deployment to ($host.hostname) \(($host.ip)\) success "
     } else {
       print $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
-      notify-send $"(ansi red_bold)[x](ansi reset) deploy to ($host.hostname) \(($host.ip)\) failed"
+      notify-send $"[x] deploy to ($host.hostname) \(($host.ip)\) failed"
     }
 
     $result | to nuon --indent 2 | save -f $'./logs/($host.hostname).nuon'
