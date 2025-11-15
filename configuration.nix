@@ -34,15 +34,17 @@
   nix.optimise = {
     automatic = true;
     persistent = true;
-    dates = [ "00:00" ];
+    dates = [ "18:00" ];
   };
-
-  # garbage collection
-  nix.gc = {
-    automatic = true;
-    persistent = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  
+  programs.nh = {
+    enable = true;
+    flake = "/home/zie/.dotfiles";
+    clean = {
+      enable = true;
+      dates = "daily";
+      extraArgs = "--keep 10 --keep-since 5d";
+    };
   };
 
   systemd.timers.reboot-weekly = {
