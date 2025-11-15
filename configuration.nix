@@ -43,21 +43,7 @@
     clean = {
       enable = true;
       dates = "daily";
-      extraArgs = "--keep 10 --keep-since 5d";
-    };
-  };
-
-  systemd.timers.reboot-weekly = {
-    enable = true;
-    wantedBy = [ "timers.target" ];
-    timerConfig.OnCalendar = "Mon 00:00";
-  };
-
-  systemd.services.reboot-weekly = {
-    description = "weekly reboot";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "/run/current-system/sw/bin/systemctl reboot";
+      extraArgs = "--keep 5 --keep-since 7d";
     };
   };
 
