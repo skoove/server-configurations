@@ -4,6 +4,8 @@
     inputs.nix-minecraft.nixosModules.minecraft-servers
   ];
 
+  environment.systemPackages = [ pkgs.tmux ]; # for attaching to the server socket
+
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   networking.firewall.allowedTCPPorts = [ 24454 ];
