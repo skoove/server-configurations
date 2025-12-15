@@ -25,6 +25,7 @@
         online-mode = false;
         spawn-protection = 0;
         server-port = 25565 + 1; # one higher than default port
+        difficulty = "normal";
       };
 
       symlinks = {
@@ -36,7 +37,7 @@
               "level": 4
             },
             {
-              "uuid": "bc0fd5ea-3e20-3fcc-a983-4097576b5a85"
+              "uuid": "bc0fd5ea-3e20-3fcc-a983-4097576b5a85",
               "name": "AliAndZ",
               "level": 4
             }
