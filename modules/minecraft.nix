@@ -18,7 +18,7 @@
       enable = true;
       autoStart = true;
       enableReload = true;
-      jvmOpts = "-Xmx3G -Xms3G";
+      jvmOpts = "-Xmx6G -Xms6G";
 
       serverProperties = {
         motd = "struver | NixOS";
