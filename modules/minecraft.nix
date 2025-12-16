@@ -65,6 +65,10 @@
               url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/K5zIeqNd/voicechat-fabric-1.21.11-2.6.7.jar";
               sha256 = "1h0qzcjx6n9c4brvcspx078bwj260a5pd0w6aa6pmb1k0145i18h";
             };
+            servux = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/zQhsx8KF/versions/nBJDns88/servux-fabric-1.21.11-0.9.0.jar";
+              sha256 = "0dd63bm5i2433xfq3sriapri7z0wcjgnlm38n7z6h2rcif7hgrdr";
+            };
           }
         );
       };
