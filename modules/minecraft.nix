@@ -8,7 +8,8 @@
 
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
-  networking.firewall.allowedTCPPorts = [ 24454 ];
+  networking.firewall.allowedTCPPorts = [ 24454 ]; # required by voice chat mod
+  networking.firewall.allowedUDPPorts = [ 24454 ]; # required by voice chat mod
 
   services.minecraft-servers = {
     enable = true;
@@ -16,7 +17,7 @@
     openFirewall = true;
 
     servers."sturver" = {
-      package = pkgs.minecraftServers.vanilla;
+      package = pkgs.fabricServers.fabric-1_21_11;
       enable = true;
       autoStart = true;
       enableReload = true;
@@ -45,6 +46,27 @@
             }
           ]
         '';
+
+        mods = pkgs.linkFarmFromDrvs "mods" (
+          builtins.attrValues {
+            ferrite-core = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/uXXizFIs/versions/eRLwt73x/ferritecore-8.0.3-fabric.jar";
+              sha256 = "0ddzqyjr07gsmryc1py9y7pqyssm7zlwh4m85jdrhqzhvfnanvn8";
+            };
+            lithium = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/gvQqBUqZ/versions/4DdLmtyz/lithium-fabric-0.21.1%2Bmc1.21.11.jar";
+              sha256 = "03jkrzi56ncwpawppn1xx2wrzf8ni8p5rjv5dc335hrd4zyyixbc";
+            };
+            scalable-lux = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/Ps1zyz6x/versions/PV9KcrYQ/ScalableLux-0.1.6%2Bfabric.c25518a-all.jar";
+              sha256 = "1hjgbnq3b8zqy2jgh2pl4cnaqx8x4mdbamiva9awg0v171qp6jks";
+            };
+            simple-voice-chat = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/K5zIeqNd/voicechat-fabric-1.21.11-2.6.7.jar";
+              sha256 = "1h0qzcjx6n9c4brvcspx078bwj260a5pd0w6aa6pmb1k0145i18h";
+            };
+          }
+        );
       };
     };
   };
