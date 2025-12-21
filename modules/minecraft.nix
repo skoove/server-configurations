@@ -69,6 +69,10 @@
               url = "https://cdn.modrinth.com/data/zQhsx8KF/versions/nBJDns88/servux-fabric-1.21.11-0.9.0.jar";
               sha256 = "0dd63bm5i2433xfq3sriapri7z0wcjgnlm38n7z6h2rcif7hgrdr";
             };
+            skin-restorer = pkgs.fetchurl {
+              url = "https://cdn.modrinth.com/data/ghrZDhGW/versions/8K5Fuf9S/skinrestorer-2.4.3%2B1.21.11-fabric.jar";
+              sha256 = "1i19wbqs3shym1hdanisj59sy8zw9vlcz94iprr2vfkmcc5w1knn";
+            };
           }
         );
       };
